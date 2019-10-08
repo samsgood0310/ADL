@@ -204,7 +204,7 @@ def bb_IOU(boxA, boxB):
     yB = min(boxA[3], boxB[3])
 
     # compute the area of intersection rectangle
-    interArea = (xB - xA + 1) * (yB - yA + 1)
+    interArea = np.maximum(0,(xB - xA + 1)) * np.maximum(0,(yB - yA + 1))
 
     # compute the area of both the prediction and ground-truth
     # rectangles
